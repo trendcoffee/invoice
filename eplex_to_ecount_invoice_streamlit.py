@@ -77,7 +77,7 @@ def convert_excel(order_file, ecount_file):
 st.title("이플렉스 → 이카운트 송장전송양식 변환기")
 
 order_file = st.file_uploader("이플렉스 주문현황 엑셀 업로드", type=["xlsx"])
-ecount_file = st.file_uploader("이카운트 기준 엑셀 업로드", type=["xlsx"])
+ecount_file = st.file_uploader("이카운트 주문 엑셀 업로드", type=["xlsx"])
 
 if order_file and ecount_file:
     result_df = convert_excel(order_file, ecount_file)
@@ -91,6 +91,6 @@ if order_file and ecount_file:
         st.download_button(
             label="📥 결과 파일 다운로드",
             data=output.getvalue(),
-            file_name="이카운트_송장전송양식_결과.xlsx",
+            file_name="이카운트_송장전송양식_.xlsx",
             mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
         )
